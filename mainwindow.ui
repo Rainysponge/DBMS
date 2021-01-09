@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_U">
+    <property name="title">
+     <string>用户(&amp;U)</string>
+    </property>
+    <addaction name="action_L"/>
+    <addaction name="action_R"/>
+   </widget>
+   <widget class="QMenu" name="menu_R">
+    <property name="title">
+     <string>数据库操作(&amp;D)</string>
+    </property>
+    <addaction name="action_C"/>
+   </widget>
+   <addaction name="menu_U"/>
+   <addaction name="menu_R"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_L">
+   <property name="text">
+    <string>登录(&amp;L)</string>
+   </property>
+  </action>
+  <action name="action_R">
+   <property name="text">
+    <string>注册(&amp;R)</string>
+   </property>
+  </action>
+  <action name="action_C">
+   <property name="text">
+    <string>创建数据库(&amp;C)</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
