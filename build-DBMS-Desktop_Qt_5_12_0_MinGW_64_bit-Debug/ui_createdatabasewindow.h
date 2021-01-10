@@ -24,11 +24,11 @@ class Ui_createDatabaseWindow
 {
 public:
     QLabel *label;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButtonCreateDB;
-    QPushButton *pushButtonCancel;
-    QWidget *widget1;
+    QPushButton *pushButtonChoose;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLineEdit *lineEditDBName;
@@ -37,38 +37,38 @@ public:
     {
         if (createDatabaseWindow->objectName().isEmpty())
             createDatabaseWindow->setObjectName(QString::fromUtf8("createDatabaseWindow"));
-        createDatabaseWindow->resize(400, 300);
+        createDatabaseWindow->resize(640, 480);
         label = new QLabel(createDatabaseWindow);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(140, 30, 111, 41));
-        widget = new QWidget(createDatabaseWindow);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(180, 220, 201, 51));
-        horizontalLayout = new QHBoxLayout(widget);
+        label->setGeometry(QRect(220, 30, 191, 61));
+        layoutWidget = new QWidget(createDatabaseWindow);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(370, 300, 261, 101));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButtonCreateDB = new QPushButton(widget);
+        pushButtonCreateDB = new QPushButton(layoutWidget);
         pushButtonCreateDB->setObjectName(QString::fromUtf8("pushButtonCreateDB"));
 
         horizontalLayout->addWidget(pushButtonCreateDB);
 
-        pushButtonCancel = new QPushButton(widget);
-        pushButtonCancel->setObjectName(QString::fromUtf8("pushButtonCancel"));
+        pushButtonChoose = new QPushButton(layoutWidget);
+        pushButtonChoose->setObjectName(QString::fromUtf8("pushButtonChoose"));
 
-        horizontalLayout->addWidget(pushButtonCancel);
+        horizontalLayout->addWidget(pushButtonChoose);
 
-        widget1 = new QWidget(createDatabaseWindow);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(60, 120, 291, 51));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(createDatabaseWindow);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(130, 120, 381, 121));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(widget1);
+        label_2 = new QLabel(layoutWidget1);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
-        lineEditDBName = new QLineEdit(widget1);
+        lineEditDBName = new QLineEdit(layoutWidget1);
         lineEditDBName->setObjectName(QString::fromUtf8("lineEditDBName"));
 
         horizontalLayout_2->addWidget(lineEditDBName);
@@ -82,9 +82,9 @@ public:
     void retranslateUi(QDialog *createDatabaseWindow)
     {
         createDatabaseWindow->setWindowTitle(QApplication::translate("createDatabaseWindow", "Dialog", nullptr));
-        label->setText(QApplication::translate("createDatabaseWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">\345\210\233\345\273\272\346\225\260\346\215\256\345\272\223</span></p></body></html>", nullptr));
+        label->setText(QApplication::translate("createDatabaseWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">\345\210\233\345\273\272/\351\200\211\346\213\251\346\225\260\346\215\256\345\272\223</span></p></body></html>", nullptr));
         pushButtonCreateDB->setText(QApplication::translate("createDatabaseWindow", "\345\210\233\345\273\272", nullptr));
-        pushButtonCancel->setText(QApplication::translate("createDatabaseWindow", "\345\217\226\346\266\210", nullptr));
+        pushButtonChoose->setText(QApplication::translate("createDatabaseWindow", "\351\200\211\346\213\251", nullptr));
         label_2->setText(QApplication::translate("createDatabaseWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">\346\225\260\346\215\256\345\272\223\345\220\215</span></p></body></html>", nullptr));
     } // retranslateUi
 

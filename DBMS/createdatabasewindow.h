@@ -21,6 +21,8 @@ public:
 private slots:
     void on_pushButtonCreateDB_clicked();
 
+    void on_pushButtonChoose_clicked();
+
 private:
     Ui::createDatabaseWindow *ui;
 //    QString expression;   //记录

@@ -38,7 +38,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(828, 586);
         action_L = new QAction(MainWindow);
         action_L->setObjectName(QString::fromUtf8("action_L"));
         action_R = new QAction(MainWindow);
@@ -50,7 +50,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 17));
+        menuBar->setGeometry(QRect(0, 0, 828, 17));
         menu_U = new QMenu(menuBar);
         menu_U->setObjectName(QString::fromUtf8("menu_U"));
         menu_R = new QMenu(menuBar);
@@ -79,7 +79,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         action_L->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225(&L)", nullptr));
         action_R->setText(QApplication::translate("MainWindow", "\346\263\250\345\206\214(&R)", nullptr));
-        action_C->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272\346\225\260\346\215\256\345\272\223(&C)", nullptr));
+        action_C->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272/\351\200\211\346\213\251\346\225\260\346\215\256\345\272\223(&C)", nullptr));
         menu_U->setTitle(QApplication::translate("MainWindow", "\347\224\250\346\210\267(&U)", nullptr));
         menu_R->setTitle(QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\223\215\344\275\234(&D)", nullptr));
     } // retranslateUi
