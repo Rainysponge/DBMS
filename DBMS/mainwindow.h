@@ -5,6 +5,8 @@
 #include "loginwindow.h"
 #include "regwindow.h"
 #include "createdatabasewindow.h"
+#include "createtable.h"
+#include "changetablewindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +25,8 @@ private slots:
     void loginActionsSlot();
     void regActionsSlot();
     void createDatabaseActionsSlot();
+    void createTableActionsSlot();
+    void changeTableActionsSlot();
 
 private:
     Ui::MainWindow *ui;

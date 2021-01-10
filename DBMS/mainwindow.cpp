@@ -11,6 +11,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->action_L, &QAction::triggered, this, &MainWindow::loginActionsSlot);
     connect(ui->action_R, &QAction::triggered, this, &MainWindow::regActionsSlot);
     connect(ui->action_C, &QAction::triggered, this, &MainWindow::createDatabaseActionsSlot);
+    connect(ui->action_CreateTable, &QAction::triggered, this,
+            &MainWindow::createTableActionsSlot);
+    connect(ui->action_E, &QAction::triggered, this, &MainWindow::changeTableActionsSlot);
+
 }
 
 MainWindow::~MainWindow()
@@ -39,5 +43,15 @@ void MainWindow::createDatabaseActionsSlot()
 }
 
 
+void MainWindow::createTableActionsSlot()
+{
+    createTable *w = new createTable();
+    w->show();
+}
 
+void MainWindow::changeTableActionsSlot()
+{
+    changeTableWindow *w = new changeTableWindow();
+    w->show();
+}
 

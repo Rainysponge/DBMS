@@ -13,7 +13,31 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>751</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCommitQ">
+    <property name="geometry">
+     <rect>
+      <x>679</x>
+      <y>200</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>提交查询</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -35,6 +59,8 @@
      <string>数据库操作(&amp;D)</string>
     </property>
     <addaction name="action_C"/>
+    <addaction name="action_CreateTable"/>
+    <addaction name="action_E"/>
    </widget>
    <addaction name="menu_U"/>
    <addaction name="menu_R"/>
@@ -61,6 +87,16 @@
   <action name="action_C">
    <property name="text">
     <string>创建/选择数据库(&amp;C)</string>
+   </property>
+  </action>
+  <action name="action_CreateTable">
+   <property name="text">
+    <string>创建表(&amp;T)</string>
+   </property>
+  </action>
+  <action name="action_E">
+   <property name="text">
+    <string>编辑表(&amp;E)</string>
    </property>
   </action>
  </widget>

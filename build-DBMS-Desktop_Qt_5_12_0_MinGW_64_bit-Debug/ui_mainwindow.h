@@ -15,7 +15,9 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -27,7 +29,11 @@ public:
     QAction *action_L;
     QAction *action_R;
     QAction *action_C;
+    QAction *action_CreateTable;
+    QAction *action_E;
     QWidget *centralWidget;
+    QTextBrowser *textBrowser;
+    QPushButton *pushButtonCommitQ;
     QMenuBar *menuBar;
     QMenu *menu_U;
     QMenu *menu_R;
@@ -45,8 +51,18 @@ public:
         action_R->setObjectName(QString::fromUtf8("action_R"));
         action_C = new QAction(MainWindow);
         action_C->setObjectName(QString::fromUtf8("action_C"));
+        action_CreateTable = new QAction(MainWindow);
+        action_CreateTable->setObjectName(QString::fromUtf8("action_CreateTable"));
+        action_E = new QAction(MainWindow);
+        action_E->setObjectName(QString::fromUtf8("action_E"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        textBrowser = new QTextBrowser(centralWidget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setGeometry(QRect(50, 30, 751, 151));
+        pushButtonCommitQ = new QPushButton(centralWidget);
+        pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
+        pushButtonCommitQ->setGeometry(QRect(679, 200, 111, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -68,6 +84,8 @@ public:
         menu_U->addAction(action_L);
         menu_U->addAction(action_R);
         menu_R->addAction(action_C);
+        menu_R->addAction(action_CreateTable);
+        menu_R->addAction(action_E);
 
         retranslateUi(MainWindow);
 
@@ -80,6 +98,9 @@ public:
         action_L->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225(&L)", nullptr));
         action_R->setText(QApplication::translate("MainWindow", "\346\263\250\345\206\214(&R)", nullptr));
         action_C->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272/\351\200\211\346\213\251\346\225\260\346\215\256\345\272\223(&C)", nullptr));
+        action_CreateTable->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272\350\241\250(&T)", nullptr));
+        action_E->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250(&E)", nullptr));
+        pushButtonCommitQ->setText(QApplication::translate("MainWindow", "\346\217\220\344\272\244\346\237\245\350\257\242", nullptr));
         menu_U->setTitle(QApplication::translate("MainWindow", "\347\224\250\346\210\267(&U)", nullptr));
         menu_R->setTitle(QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\223\215\344\275\234(&D)", nullptr));
     } // retranslateUi

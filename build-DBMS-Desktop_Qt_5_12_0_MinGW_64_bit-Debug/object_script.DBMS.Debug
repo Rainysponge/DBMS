@@ -1,0 +1,13 @@
+debug/main.o
+debug/mainwindow.o
+debug/loginwindow.o
+debug/regwindow.o
+debug/createdatabasewindow.o
+debug/createtable.o
+debug/changetablewindow.o
+debug/moc_mainwindow.o
+debug/moc_loginwindow.o
+debug/moc_regwindow.o
+debug/moc_createdatabasewindow.o
+debug/moc_createtable.o
+debug/moc_changetablewindow.o

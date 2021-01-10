@@ -29,19 +29,25 @@ SOURCES += \
         mainwindow.cpp \
     loginwindow.cpp \
     regwindow.cpp \
-    createdatabasewindow.cpp
+    createdatabasewindow.cpp \
+    createtable.cpp \
+    changetablewindow.cpp
 
 HEADERS += \
         mainwindow.h \
     loginwindow.h \
     regwindow.h \
-    createdatabasewindow.h
+    createdatabasewindow.h \
+    createtable.h \
+    changetablewindow.h
 
 FORMS += \
         mainwindow.ui \
     loginwindow.ui \
     regwindow.ui \
-    createdatabasewindow.ui
+    createdatabasewindow.ui \
+    createtable.ui \
+    changetablewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
