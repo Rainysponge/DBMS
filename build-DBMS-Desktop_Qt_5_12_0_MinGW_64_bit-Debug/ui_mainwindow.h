@@ -31,6 +31,7 @@ public:
     QAction *action_C;
     QAction *action_CreateTable;
     QAction *action_E;
+    QAction *action_Q;
     QWidget *centralWidget;
     QTextBrowser *textBrowser;
     QPushButton *pushButtonCommitQ;
@@ -55,14 +56,16 @@ public:
         action_CreateTable->setObjectName(QString::fromUtf8("action_CreateTable"));
         action_E = new QAction(MainWindow);
         action_E->setObjectName(QString::fromUtf8("action_E"));
+        action_Q = new QAction(MainWindow);
+        action_Q->setObjectName(QString::fromUtf8("action_Q"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         textBrowser = new QTextBrowser(centralWidget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(50, 30, 751, 151));
+        textBrowser->setGeometry(QRect(40, 20, 751, 191));
         pushButtonCommitQ = new QPushButton(centralWidget);
         pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
-        pushButtonCommitQ->setGeometry(QRect(679, 200, 111, 31));
+        pushButtonCommitQ->setGeometry(QRect(700, 230, 111, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -83,6 +86,7 @@ public:
         menuBar->addAction(menu_R->menuAction());
         menu_U->addAction(action_L);
         menu_U->addAction(action_R);
+        menu_U->addAction(action_Q);
         menu_R->addAction(action_C);
         menu_R->addAction(action_CreateTable);
         menu_R->addAction(action_E);
@@ -100,6 +104,7 @@ public:
         action_C->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272/\351\200\211\346\213\251\346\225\260\346\215\256\345\272\223(&C)", nullptr));
         action_CreateTable->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272\350\241\250(&T)", nullptr));
         action_E->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250(&E)", nullptr));
+        action_Q->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\346\235\203\351\231\220(&Q)", nullptr));
         pushButtonCommitQ->setText(QApplication::translate("MainWindow", "\346\217\220\344\272\244\346\237\245\350\257\242", nullptr));
         menu_U->setTitle(QApplication::translate("MainWindow", "\347\224\250\346\210\267(&U)", nullptr));
         menu_R->setTitle(QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\223\215\344\275\234(&D)", nullptr));

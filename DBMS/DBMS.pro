@@ -31,7 +31,8 @@ SOURCES += \
     regwindow.cpp \
     createdatabasewindow.cpp \
     createtable.cpp \
-    changetablewindow.cpp
+    changetablewindow.cpp \
+    changelimitw.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,7 +40,8 @@ HEADERS += \
     regwindow.h \
     createdatabasewindow.h \
     createtable.h \
-    changetablewindow.h
+    changetablewindow.h \
+    changelimitw.h
 
 FORMS += \
         mainwindow.ui \
@@ -47,7 +49,8 @@ FORMS += \
     regwindow.ui \
     createdatabasewindow.ui \
     createtable.ui \
-    changetablewindow.ui
+    changetablewindow.ui \
+    changelimitw.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

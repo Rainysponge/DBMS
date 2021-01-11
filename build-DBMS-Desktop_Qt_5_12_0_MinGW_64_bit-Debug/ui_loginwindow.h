@@ -12,11 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,78 +25,67 @@ class Ui_loginWindow
 {
 public:
     QLabel *label;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButtonLogin;
     QPushButton *pushButtonCancel;
-    QWidget *widget1;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout_2;
+    QWidget *widget;
+    QGridLayout *gridLayout;
     QLabel *label_2;
-    QLineEdit *lineEditForname;
-    QHBoxLayout *horizontalLayout_3;
+    QLineEdit *lineEditUserName;
     QLabel *label_3;
-    QLineEdit *lineEditForpass;
+    QLineEdit *lineEditPassWord;
 
     void setupUi(QDialog *loginWindow)
     {
         if (loginWindow->objectName().isEmpty())
             loginWindow->setObjectName(QString::fromUtf8("loginWindow"));
-        loginWindow->resize(400, 300);
+        loginWindow->resize(485, 346);
         label = new QLabel(loginWindow);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(160, 30, 81, 31));
-        widget = new QWidget(loginWindow);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(180, 230, 201, 41));
-        horizontalLayout = new QHBoxLayout(widget);
+        label->setGeometry(QRect(200, 20, 81, 31));
+        layoutWidget = new QWidget(loginWindow);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(220, 240, 241, 71));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButtonLogin = new QPushButton(widget);
+        pushButtonLogin = new QPushButton(layoutWidget);
         pushButtonLogin->setObjectName(QString::fromUtf8("pushButtonLogin"));
 
         horizontalLayout->addWidget(pushButtonLogin);
 
-        pushButtonCancel = new QPushButton(widget);
+        pushButtonCancel = new QPushButton(layoutWidget);
         pushButtonCancel->setObjectName(QString::fromUtf8("pushButtonCancel"));
 
         horizontalLayout->addWidget(pushButtonCancel);
 
-        widget1 = new QWidget(loginWindow);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(70, 80, 281, 111));
-        verticalLayout = new QVBoxLayout(widget1);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(widget1);
+        widget = new QWidget(loginWindow);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(40, 70, 391, 131));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        horizontalLayout_2->addWidget(label_2);
+        gridLayout->addWidget(label_2, 0, 0, 1, 1);
 
-        lineEditForname = new QLineEdit(widget1);
-        lineEditForname->setObjectName(QString::fromUtf8("lineEditForname"));
+        lineEditUserName = new QLineEdit(widget);
+        lineEditUserName->setObjectName(QString::fromUtf8("lineEditUserName"));
 
-        horizontalLayout_2->addWidget(lineEditForname);
+        gridLayout->addWidget(lineEditUserName, 0, 1, 1, 1);
 
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_3 = new QLabel(widget1);
+        label_3 = new QLabel(widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        horizontalLayout_3->addWidget(label_3);
+        gridLayout->addWidget(label_3, 1, 0, 1, 1);
 
-        lineEditForpass = new QLineEdit(widget1);
-        lineEditForpass->setObjectName(QString::fromUtf8("lineEditForpass"));
+        lineEditPassWord = new QLineEdit(widget);
+        lineEditPassWord->setObjectName(QString::fromUtf8("lineEditPassWord"));
+        lineEditPassWord->setEchoMode(QLineEdit::Password);
 
-        horizontalLayout_3->addWidget(lineEditForpass);
-
-
-        verticalLayout->addLayout(horizontalLayout_3);
+        gridLayout->addWidget(lineEditPassWord, 1, 1, 1, 1);
 
 
         retranslateUi(loginWindow);
@@ -110,8 +99,8 @@ public:
         label->setText(QApplication::translate("loginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">\347\231\273\345\275\225</span></p></body></html>", nullptr));
         pushButtonLogin->setText(QApplication::translate("loginWindow", "\347\231\273\345\275\225", nullptr));
         pushButtonCancel->setText(QApplication::translate("loginWindow", "\345\217\226\346\266\210", nullptr));
-        label_2->setText(QApplication::translate("loginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">\347\224\250\346\210\267\345\220\215</span></p></body></html>", nullptr));
-        label_3->setText(QApplication::translate("loginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">\345\257\206   \347\240\201</span></p></body></html>", nullptr));
+        label_2->setText(QApplication::translate("loginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">\347\224\250\346\210\267\345\220\215</span></p></body></html>", nullptr));
+        label_3->setText(QApplication::translate("loginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">\345\257\206\347\240\201</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

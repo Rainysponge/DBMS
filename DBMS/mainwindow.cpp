@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->action_CreateTable, &QAction::triggered, this,
             &MainWindow::createTableActionsSlot);
     connect(ui->action_E, &QAction::triggered, this, &MainWindow::changeTableActionsSlot);
-
+    connect(ui->action_Q, &QAction::triggered, this, &MainWindow::changeLimitActionsSlot);
 }
 
 MainWindow::~MainWindow()
@@ -53,6 +53,29 @@ void MainWindow::createTableActionsSlot()
 void MainWindow::changeTableActionsSlot()
 {
     changeTableWindow *w = new changeTableWindow();
+    w->show();
+}
+
+
+void MainWindow::changeLimitActionsSlot()
+{
+    QString path = QCoreApplication::applicationDirPath();
+    QString userpath = path + "/user.csv";
+    QString userlogining = path + "/user_now.csv";
+
+    QFile fileW(userlogining);
+    fileW.open(QIODevice::ReadOnly);
+
+    QByteArray bytes = fileW.readAll();
+//    fileW.write(bytes);
+    fileW.close();
+    qDebug() << bytes;
+    QString user_root = QString(bytes);
+    if(user_root != "root"){
+        QMessageBox::warning(this, "ERROR", user_root + "没有该权限！");
+        return;
+    }
+    changeLimitW *w = new changeLimitW();
     w->show();
 }
 

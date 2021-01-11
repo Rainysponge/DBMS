@@ -5,9 +5,11 @@ release/regwindow.o
 release/createdatabasewindow.o
 release/createtable.o
 release/changetablewindow.o
+release/changelimitw.o
 release/moc_mainwindow.o
 release/moc_loginwindow.o
 release/moc_regwindow.o
 release/moc_createdatabasewindow.o
 release/moc_createtable.o
 release/moc_changetablewindow.o
+release/moc_changelimitw.o

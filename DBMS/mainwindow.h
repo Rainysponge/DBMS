@@ -4,11 +4,15 @@
 #include <QMainWindow>
 //#include <stdio.h>
 #include <regex>
+#include <QDebug>
+#include <QMessageBox>
+#include <QDir>
 #include "loginwindow.h"
 #include "regwindow.h"
 #include "createdatabasewindow.h"
 #include "createtable.h"
 #include "changetablewindow.h"
+#include "changelimitw.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,6 +33,7 @@ private slots:
     void createDatabaseActionsSlot();
     void createTableActionsSlot();
     void changeTableActionsSlot();
+    void changeLimitActionsSlot();
 
 private:
     Ui::MainWindow *ui;
