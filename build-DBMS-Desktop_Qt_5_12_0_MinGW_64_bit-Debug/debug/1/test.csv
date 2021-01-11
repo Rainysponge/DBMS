@@ -1,2 +1,2 @@
-chartest,char(),ÊÇ,ÊÇ
-IntTest,int,·ñ,ÊÇ
+CharTest,char(),1,0
+IntTest,int,0,1

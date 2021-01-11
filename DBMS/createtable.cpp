@@ -185,26 +185,26 @@ void createTable::on_pushButtonAddCon_clicked()
 
 
 //         // 先读后写
-////        if(!csvFile.open(QIODevice::WriteOnly|QIODevice::Text| QIODevice::Append))
-////        {
-////            qDebug()<<QObject::tr("打开失败");
-////            QMessageBox::warning(this, "ERROR", "Something wrong happened!");
-////        }else{
-////            QString lineInfo = "";
-////            lineInfo += ui->lineEditFieldName->text();
-////            lineInfo += ',' + ui->comboBoxType->currentText();
-////            lineInfo += ',' + ui->comboBoxPrimary->currentText();
-////            lineInfo += ',' + ui->comboBoxNULL->currentText();
-////            lineInfo += "\n";
-////            QTextStream in(&csvFile);
-////            in<<lineInfo;
+//        if(!csvFile.open(QIODevice::WriteOnly|QIODevice::Text| QIODevice::Append))
+//        {
+//            qDebug()<<QObject::tr("打开失败");
+//            QMessageBox::warning(this, "ERROR", "Something wrong happened!");
+//        }else{
+//            QString lineInfo = "";
+//            lineInfo += ui->lineEditFieldName->text();
+//            lineInfo += ',' + ui->comboBoxType->currentText();
+//            lineInfo += ',' + ui->comboBoxPrimary->currentText();
+//            lineInfo += ',' + ui->comboBoxNULL->currentText();
+//            lineInfo += "\n";
+//            QTextStream in(&csvFile);
+//            in<<lineInfo;
 
 
-////            QMessageBox::warning(this, "Success", "该表已经成功被修改！");
-////        }
-////        csvFile.close();
-////    }else{
-////        QMessageBox::warning(this, "Error", "该表似乎不存在！");
+//            QMessageBox::warning(this, "Success", "该表已经成功被修改！");
+//        }
+//        csvFile.close();
+//    }else{
+//        QMessageBox::warning(this, "Error", "该表似乎不存在！");
 //    }
 
 

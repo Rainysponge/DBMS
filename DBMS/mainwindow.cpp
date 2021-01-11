@@ -24,6 +24,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginActionsSlot()
 {
+//    printf("%s", "abbbb");
     loginWindow *loginw = new loginWindow();
     loginw->show();
 }

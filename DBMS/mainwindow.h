@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+//#include <stdio.h>
+#include <regex>
 #include "loginwindow.h"
 #include "regwindow.h"
 #include "createdatabasewindow.h"
