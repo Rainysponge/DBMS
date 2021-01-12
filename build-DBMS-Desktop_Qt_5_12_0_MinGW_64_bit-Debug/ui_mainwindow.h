@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -35,9 +37,13 @@ public:
     QAction *action_E;
     QAction *action_Q;
     QWidget *centralWidget;
-    QPushButton *pushButtonCommitQ;
     QTextEdit *textEditSQL;
     QTreeWidget *treeWidgetDB;
+    QLabel *label;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButtonCMD;
+    QPushButton *pushButtonCommitQ;
     QMenuBar *menuBar;
     QMenu *menu_U;
     QMenu *menu_R;
@@ -63,15 +69,33 @@ public:
         action_Q->setObjectName(QString::fromUtf8("action_Q"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        pushButtonCommitQ = new QPushButton(centralWidget);
-        pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
-        pushButtonCommitQ->setGeometry(QRect(880, 240, 111, 31));
         textEditSQL = new QTextEdit(centralWidget);
         textEditSQL->setObjectName(QString::fromUtf8("textEditSQL"));
-        textEditSQL->setGeometry(QRect(230, 50, 761, 151));
+        textEditSQL->setGeometry(QRect(210, 60, 801, 151));
         treeWidgetDB = new QTreeWidget(centralWidget);
         treeWidgetDB->setObjectName(QString::fromUtf8("treeWidgetDB"));
         treeWidgetDB->setGeometry(QRect(10, 10, 181, 601));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(500, 10, 231, 41));
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(770, 220, 241, 51));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButtonCMD = new QPushButton(widget);
+        pushButtonCMD->setObjectName(QString::fromUtf8("pushButtonCMD"));
+
+        horizontalLayout->addWidget(pushButtonCMD);
+
+        pushButtonCommitQ = new QPushButton(widget);
+        pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
+
+        horizontalLayout->addWidget(pushButtonCommitQ);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -111,9 +135,11 @@ public:
         action_CreateTable->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272\350\241\250(&T)", nullptr));
         action_E->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250(&E)", nullptr));
         action_Q->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\346\235\203\351\231\220(&Q)", nullptr));
-        pushButtonCommitQ->setText(QApplication::translate("MainWindow", "\346\217\220\344\272\244\346\237\245\350\257\242", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = treeWidgetDB->headerItem();
         ___qtreewidgetitem->setText(0, QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\200\273\350\247\210", nullptr));
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">SQL\350\276\223\345\205\245\346\241\206</span></p></body></html>", nullptr));
+        pushButtonCMD->setText(QApplication::translate("MainWindow", "\344\275\277\347\224\250\345\221\275\344\273\244\350\241\214", nullptr));
+        pushButtonCommitQ->setText(QApplication::translate("MainWindow", "\346\217\220\344\272\244\346\237\245\350\257\242", nullptr));
         menu_U->setTitle(QApplication::translate("MainWindow", "\347\224\250\346\210\267(&U)", nullptr));
         menu_R->setTitle(QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\223\215\344\275\234(&D)", nullptr));
     } // retranslateUi

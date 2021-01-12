@@ -288,6 +288,7 @@ void changeTableWindow::on_pushButtonDelTable_clicked()
     // table_name用于记录表名，database_used记录正在使用的数据库
 
     QString istrFileName = path + '/' + database_used + '/' + table_name + ".csv";
+    QString dataFileName = path + '/' + database_used + '/' + table_name + "_data.csv";
     QFile * tempFile = new QFile;
     if(tempFile->exists(istrFileName))
     {
@@ -298,7 +299,19 @@ void changeTableWindow::on_pushButtonDelTable_clicked()
     }
     else {
         QMessageBox::warning(this, "ERROR", "该表不存在！");
+        return;
     }
+
+
+    QFile * datatempFile = new QFile;
+    if(datatempFile->exists(dataFileName))
+    {
+        qDebug()<<QObject::tr("文件存在");
+          QFile fileRemove(dataFileName);
+          fileRemove.remove();
+          ui->TableStructionText->setText("Delete Successfully!");
+    }
+
 
 
 

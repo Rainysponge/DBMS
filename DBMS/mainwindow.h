@@ -32,6 +32,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void keyPressEvent(QKeyEvent *k);
+    void deleteSQL(QString username, QString sql);
 
 
 private slots:
@@ -43,6 +44,8 @@ private slots:
     void changeLimitActionsSlot();
 
     void on_pushButtonCommitQ_clicked();
+
+    void on_pushButtonCMD_clicked();
 
 private:
     Ui::MainWindow *ui;
