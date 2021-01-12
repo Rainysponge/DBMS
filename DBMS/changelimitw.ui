@@ -62,7 +62,7 @@
     <string>提交修改</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -84,7 +84,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -151,7 +151,7 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QComboBox" name="comboBoxShow">
+     <widget class="QComboBox" name="comboBoxW">
       <item>
        <property name="text">
         <string>1</string>
@@ -249,7 +249,7 @@
      </widget>
     </item>
     <item row="1" column="7">
-     <widget class="QComboBox" name="comboBox_8">
+     <widget class="QComboBox" name="comboBoxShow">
       <item>
        <property name="text">
         <string>1</string>
