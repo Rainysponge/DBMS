@@ -17,7 +17,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -33,8 +33,8 @@ public:
     QAction *action_E;
     QAction *action_Q;
     QWidget *centralWidget;
-    QTextBrowser *textBrowser;
     QPushButton *pushButtonCommitQ;
+    QTextEdit *textEditSQL;
     QMenuBar *menuBar;
     QMenu *menu_U;
     QMenu *menu_R;
@@ -60,12 +60,12 @@ public:
         action_Q->setObjectName(QString::fromUtf8("action_Q"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        textBrowser = new QTextBrowser(centralWidget);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(40, 20, 751, 191));
         pushButtonCommitQ = new QPushButton(centralWidget);
         pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
         pushButtonCommitQ->setGeometry(QRect(700, 230, 111, 31));
+        textEditSQL = new QTextEdit(centralWidget);
+        textEditSQL->setObjectName(QString::fromUtf8("textEditSQL"));
+        textEditSQL->setGeometry(QRect(33, 43, 761, 151));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));

@@ -71,11 +71,23 @@ void MainWindow::changeLimitActionsSlot()
     fileW.close();
     qDebug() << bytes;
     QString user_root = QString(bytes);
-    if(user_root != "root"){
-        QMessageBox::warning(this, "ERROR", user_root + "没有该权限！");
+    if(user_root != "root")
+    {
+        QMessageBox::warning(this, "ERROR", user_root + "没有修改权限！");
         return;
     }
     changeLimitW *w = new changeLimitW();
     w->show();
 }
 
+
+
+
+
+
+void MainWindow::on_pushButtonCommitQ_clicked()
+{
+    int i = 0;
+    i++;
+
+}

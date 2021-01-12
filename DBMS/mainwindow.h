@@ -3,7 +3,18 @@
 
 #include <QMainWindow>
 //#include <stdio.h>
-#include <regex>
+//#include <iostream>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <conio.h>
+//#include <string>
+//#include <vector>
+//#include <io.h>
+//#include <sstream>
+//#include <regex>
+//#include <fstream>
+//#include <typeinfo>
+//#include <direct.h>
 #include <QDebug>
 #include <QMessageBox>
 #include <QDir>
@@ -34,6 +45,8 @@ private slots:
     void createTableActionsSlot();
     void changeTableActionsSlot();
     void changeLimitActionsSlot();
+
+    void on_pushButtonCommitQ_clicked();
 
 private:
     Ui::MainWindow *ui;
