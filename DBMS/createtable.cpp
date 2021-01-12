@@ -97,8 +97,12 @@ void createTable::on_pushButtonCreate_clicked()
         QMessageBox::warning(this, "Success", "该表已经成功被创建！");
     }
     csvFile.close();
-
-
+    QFile datacsvFile(dataFile);
+    datacsvFile.open(QIODevice::WriteOnly);
+    QString outputTodata = ui->lineEditFieldName->text() + "\n";
+    QByteArray bytes = outputTodata.toUtf8();
+    datacsvFile.write(bytes);  // 写入
+    datacsvFile.close();
 
 }
 
@@ -136,13 +140,61 @@ void createTable::on_pushButtonAddCon_clicked()
             QTextStream in(&csvFile);
             in<<lineInfo;
 
-
-            QMessageBox::warning(this, "Success", "该表已经成功被修改！");
+            // 1 2 3 4
+//            QMessageBox::warning(this, "Success", "该表已经成功被修改！");
         }
         csvFile.close();
     }else{
         QMessageBox::warning(this, "Error", "该表似乎不存在！");
     }
+
+
+    QString dataFile = path + '/' + database_used + '/' + table_name + "_data.csv";
+
+
+//    QFile datacsvFile(dataFile);
+//    datacsvFile.open(QIODevice::ReadOnly);
+//    ba = datacsvFile.readAll();
+    QFile csvFile(dataFile);
+    csvFile.open(QIODevice::ReadWrite|QIODevice::Text);
+    QTextStream * out = new QTextStream(&csvFile);
+    QStringList tempOption = out->readAll().split("\n");//每行以\n区分
+    qDebug() << out->readAll();
+//    QString output = "";
+
+    QString outputToFile = "";
+
+    for(int i = 0 ; i < tempOption.count() - 1 ; i++)  // 去除最后一行
+    {
+         QStringList tempbar = tempOption.at(i).split(",");//一行中的单元格以，区分
+
+        if(i == 0)
+        {
+            outputToFile += tempOption.at(i) + "," + ui->lineEditFieldName->text() + "\n";
+        }else {
+            outputToFile += tempOption.at(i) + "\n";
+        }
+
+
+
+    }
+    csvFile.close();//操作完成后记得关闭文件
+
+    QFile fileW(dataFile);
+    fileW.open(QIODevice::WriteOnly);
+
+    QByteArray bytes = outputToFile.toUtf8();
+    fileW.write(bytes);  // 写入
+    fileW.close();
+
+    QMessageBox::warning(this, "Success", "增加完成！");
+    return;
+
+//    QString outputTodata = ui->lineEditFieldName->text();
+//    QByteArray bytes = outputTodata.toUtf8();
+//    datacsvFile.write(bytes);  // 写入
+//    datacsvFile.close();
+
 
 }
 

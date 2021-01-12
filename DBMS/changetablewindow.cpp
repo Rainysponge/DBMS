@@ -300,4 +300,6 @@ void changeTableWindow::on_pushButtonDelTable_clicked()
         QMessageBox::warning(this, "ERROR", "该表不存在！");
     }
 
+
+
 }

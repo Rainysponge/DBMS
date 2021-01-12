@@ -127,9 +127,7 @@ void MainWindow::keyPressEvent(QKeyEvent *k)
                 delete item;
         }
         item = new QTreeWidgetItem;
-//        if(item){
-//            qDebug() << QString(item->childCount());
-//        }
+
         item->setText(0,database_used);
         ui->treeWidgetDB->addTopLevelItem(item);
 
@@ -138,13 +136,12 @@ void MainWindow::keyPressEvent(QKeyEvent *k)
         QList<QFileInfo> *fileInfo=new QList<QFileInfo>(dir->entryInfoList(filter));
         for(int i = 0;i<fileInfo->count(); i++)
         {
-//            qDebug()<<fileInfo->at(i).filePath();
+
             QRegExp rx("(.*)_data.csv");
-//            qDebug() << rx.indexIn(fileInfo->at(i).fileName());
+
 
             if(rx.indexIn(fileInfo->at(i).fileName())==0)
             {
-//                qDebug()<<fileInfo->at(i).fileName();
 
                 QString value = rx.cap(1);
                 qDebug() << value;
@@ -169,9 +166,13 @@ void test()
 
 void MainWindow::on_pushButtonCommitQ_clicked()
 {
+    QString a = "";
+//    QString sql = ui->textEditSQL->
+//    int m = a.find(QRegExp("123"), 0);
+
     int i = 0;
     i++;
-
-    system("C:\\Users\\37536\\Desktop\\database_cp\\main.exe");
+    qDebug() << "123";
+//    system("C:\\Users\\37536\\Desktop\\database_cp\\main.exe");
 
 }
