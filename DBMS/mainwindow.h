@@ -5,19 +5,14 @@
 //#include <stdio.h>
 //#include <iostream>
 //#include <stdio.h>
-//#include <stdlib.h>
-//#include <conio.h>
-//#include <string>
-//#include <vector>
-//#include <io.h>
-//#include <sstream>
-//#include <regex>
-//#include <fstream>
-//#include <typeinfo>
-//#include <direct.h>
+#include <stdlib.h>
 #include <QDebug>
 #include <QMessageBox>
 #include <QDir>
+#include <QKeyEvent>
+#include <QFileDialog>
+#include <QRegExp>
+#include <QTreeWidgetItem>
 #include "loginwindow.h"
 #include "regwindow.h"
 #include "createdatabasewindow.h"
@@ -36,6 +31,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void keyPressEvent(QKeyEvent *k);
 
 
 private slots:
@@ -50,6 +46,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QTreeWidgetItem *item;  //根节点(根节点下可以有多个子结点)
+    QTreeWidgetItem *itemD; //子节点(子点下可以有多个孙子结点)
+    QTreeWidgetItem *itemW; //子节点
 };
 
 #endif // MAINWINDOW_H

@@ -24,7 +24,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginActionsSlot()
 {
-//    printf("%s", "abbbb");
     loginWindow *loginw = new loginWindow();
     loginw->show();
 }
@@ -67,7 +66,7 @@ void MainWindow::changeLimitActionsSlot()
     fileW.open(QIODevice::ReadOnly);
 
     QByteArray bytes = fileW.readAll();
-//    fileW.write(bytes);
+
     fileW.close();
     qDebug() << bytes;
     QString user_root = QString(bytes);
@@ -81,7 +80,61 @@ void MainWindow::changeLimitActionsSlot()
 }
 
 
+void MainWindow::keyPressEvent(QKeyEvent *k)
+{
+    //刷新树
 
+    if(k->modifiers() == Qt::ControlModifier && k->key() == Qt::Key_F)
+    {
+        QString path = QCoreApplication::applicationDirPath();
+        QString DBused = path + "/database_use.csv";
+        QFile file(DBused);
+        file.open(QIODevice::ReadOnly);
+        QByteArray ba = file.readAll();
+        qDebug() << ba;
+        QString database_used = QString(ba);
+        file.close();
+        // table_name用于记录表名，database_used记录正在使用的数据库
+
+        path = path + '/' + database_used;
+        qDebug() << "F键被按下" << path << "\n";
+
+
+        item = new QTreeWidgetItem;
+        item->setText(0,database_used);
+        ui->treeWidgetDB->addTopLevelItem(item);
+//        ui->
+        QDir *dir=new QDir(path);
+        QStringList filter;
+        QList<QFileInfo> *fileInfo=new QList<QFileInfo>(dir->entryInfoList(filter));
+        for(int i = 0;i<fileInfo->count(); i++)
+        {
+//            qDebug()<<fileInfo->at(i).filePath();
+            QRegExp rx("(.*)_data.csv");
+//            qDebug() << rx.indexIn(fileInfo->at(i).fileName());
+
+            if(rx.indexIn(fileInfo->at(i).fileName())==0)
+            {
+//                qDebug()<<fileInfo->at(i).fileName();
+
+                QString value = rx.cap(1);
+                qDebug() << value;
+                itemD = new QTreeWidgetItem;
+                itemD -> setText(0,value);
+                item->addChild(itemD);
+
+            }
+
+
+
+        }
+    }
+}
+
+void test()
+{
+    qDebug() << "Hello" << "\n";
+}
 
 
 
@@ -89,5 +142,7 @@ void MainWindow::on_pushButtonCommitQ_clicked()
 {
     int i = 0;
     i++;
+
+    system("C:\\Users\\37536\\Desktop\\database_cp\\main.exe");
 
 }

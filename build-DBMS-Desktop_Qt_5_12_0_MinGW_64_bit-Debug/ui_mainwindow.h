@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,6 +37,7 @@ public:
     QWidget *centralWidget;
     QPushButton *pushButtonCommitQ;
     QTextEdit *textEditSQL;
+    QTreeWidget *treeWidgetDB;
     QMenuBar *menuBar;
     QMenu *menu_U;
     QMenu *menu_R;
@@ -45,7 +48,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(828, 586);
+        MainWindow->resize(1019, 702);
         action_L = new QAction(MainWindow);
         action_L->setObjectName(QString::fromUtf8("action_L"));
         action_R = new QAction(MainWindow);
@@ -62,14 +65,17 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButtonCommitQ = new QPushButton(centralWidget);
         pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
-        pushButtonCommitQ->setGeometry(QRect(700, 230, 111, 31));
+        pushButtonCommitQ->setGeometry(QRect(880, 240, 111, 31));
         textEditSQL = new QTextEdit(centralWidget);
         textEditSQL->setObjectName(QString::fromUtf8("textEditSQL"));
-        textEditSQL->setGeometry(QRect(33, 43, 761, 151));
+        textEditSQL->setGeometry(QRect(230, 50, 761, 151));
+        treeWidgetDB = new QTreeWidget(centralWidget);
+        treeWidgetDB->setObjectName(QString::fromUtf8("treeWidgetDB"));
+        treeWidgetDB->setGeometry(QRect(10, 10, 181, 601));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 828, 17));
+        menuBar->setGeometry(QRect(0, 0, 1019, 17));
         menu_U = new QMenu(menuBar);
         menu_U->setObjectName(QString::fromUtf8("menu_U"));
         menu_R = new QMenu(menuBar);
@@ -106,6 +112,8 @@ public:
         action_E->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250(&E)", nullptr));
         action_Q->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\346\235\203\351\231\220(&Q)", nullptr));
         pushButtonCommitQ->setText(QApplication::translate("MainWindow", "\346\217\220\344\272\244\346\237\245\350\257\242", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem = treeWidgetDB->headerItem();
+        ___qtreewidgetitem->setText(0, QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\200\273\350\247\210", nullptr));
         menu_U->setTitle(QApplication::translate("MainWindow", "\347\224\250\346\210\267(&U)", nullptr));
         menu_R->setTitle(QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\223\215\344\275\234(&D)", nullptr));
     } // retranslateUi

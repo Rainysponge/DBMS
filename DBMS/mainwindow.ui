@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>828</width>
-    <height>586</height>
+    <width>1019</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButtonCommitQ">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>230</y>
+      <x>880</x>
+      <y>240</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -30,12 +30,27 @@
    <widget class="QTextEdit" name="textEditSQL">
     <property name="geometry">
      <rect>
-      <x>33</x>
-      <y>43</y>
+      <x>230</x>
+      <y>50</y>
       <width>761</width>
       <height>151</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QTreeWidget" name="treeWidgetDB">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>181</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>数据库总览</string>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -43,7 +58,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>828</width>
+     <width>1019</width>
      <height>17</height>
     </rect>
    </property>
