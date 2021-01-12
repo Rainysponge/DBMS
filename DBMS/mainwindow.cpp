@@ -79,6 +79,22 @@ void MainWindow::changeLimitActionsSlot()
     w->show();
 }
 
+void del(QTreeWidgetItem* node)
+{
+    if(node->childCount() > 0)
+    {
+        for(int i = 0; i < node->childCount(); i ++)
+        {
+            del(node->child(i));
+        }
+    }
+    else
+    {
+        delete node;
+    }
+}
+
+
 
 void MainWindow::keyPressEvent(QKeyEvent *k)
 {
@@ -96,14 +112,27 @@ void MainWindow::keyPressEvent(QKeyEvent *k)
         file.close();
         // table_name用于记录表名，database_used记录正在使用的数据库
 
+
+
         path = path + '/' + database_used;
         qDebug() << "F键被按下" << path << "\n";
-
-
+        if(item){
+            if(item->childCount() > 0)
+                {
+                    for(int i = 0; i < item->childCount(); i ++)
+                    {
+                        del(item->child(i));
+                    }
+                }
+                delete item;
+        }
         item = new QTreeWidgetItem;
+//        if(item){
+//            qDebug() << QString(item->childCount());
+//        }
         item->setText(0,database_used);
         ui->treeWidgetDB->addTopLevelItem(item);
-//        ui->
+
         QDir *dir=new QDir(path);
         QStringList filter;
         QList<QFileInfo> *fileInfo=new QList<QFileInfo>(dir->entryInfoList(filter));

@@ -46,9 +46,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QTreeWidgetItem *item;  //根节点(根节点下可以有多个子结点)
-    QTreeWidgetItem *itemD; //子节点(子点下可以有多个孙子结点)
-    QTreeWidgetItem *itemW; //子节点
+    QTreeWidgetItem *item = nullptr;  //根节点(根节点下可以有多个子结点)
+    QTreeWidgetItem *itemD = nullptr; //子节点(子点下可以有多个孙子结点)
+    QTreeWidgetItem *itemW = nullptr; //子节点
 };
 
 #endif // MAINWINDOW_H
