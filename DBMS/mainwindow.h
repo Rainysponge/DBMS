@@ -33,6 +33,8 @@ public:
     ~MainWindow();
     void keyPressEvent(QKeyEvent *k);
     void deleteSQL(QString username, QString sql);
+    void useSQL(QString username, QString sql);
+    void createSQL(QString username, QString sql);
 
 
 private slots:

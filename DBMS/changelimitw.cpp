@@ -110,7 +110,7 @@ void changeLimitW::on_pushButtonSummit_clicked()
 
              // ToFile
 
-             outputToFile += username + "," + tempbar[1]+ ",";
+             outputToFile += tempbar[0] + "," + tempbar[1]+ ",";
              outputToFile += "," + tempbar[2] + "," + tempbar[3] + "," + tempbar[4];
              outputToFile += "," + tempbar[5] + "," + tempbar[6] + "," + tempbar[7] + "," + tempbar[8] + "," + tempbar[9] + "\n";
          }

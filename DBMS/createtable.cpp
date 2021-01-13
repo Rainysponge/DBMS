@@ -19,12 +19,12 @@ createTable::~createTable()
 
 void createTable::print_Type()
 {
-//    if(ui->comboBox->currentIndex()==0) ui->lineEdit->setText("小振国");
     if(ui->comboBoxType->currentIndex()==0) qDebug() << "char()";
     if(ui->comboBoxType->currentIndex()==1) qDebug() << "int";
     if(ui->comboBoxType->currentIndex()==2) qDebug() << "bool";
-
 }
+
+
 
 
 
@@ -152,9 +152,6 @@ void createTable::on_pushButtonAddCon_clicked()
     QString dataFile = path + '/' + database_used + '/' + table_name + "_data.csv";
 
 
-//    QFile datacsvFile(dataFile);
-//    datacsvFile.open(QIODevice::ReadOnly);
-//    ba = datacsvFile.readAll();
     QFile csvFile(dataFile);
     csvFile.open(QIODevice::ReadWrite|QIODevice::Text);
     QTextStream * out = new QTextStream(&csvFile);
@@ -189,11 +186,6 @@ void createTable::on_pushButtonAddCon_clicked()
 
     QMessageBox::warning(this, "Success", "增加完成！");
     return;
-
-//    QString outputTodata = ui->lineEditFieldName->text();
-//    QByteArray bytes = outputTodata.toUtf8();
-//    datacsvFile.write(bytes);  // 写入
-//    datacsvFile.close();
 
 
 }
