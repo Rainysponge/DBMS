@@ -36,11 +36,12 @@ public:
     QAction *action_CreateTable;
     QAction *action_E;
     QAction *action_Q;
+    QAction *action_EditTableInfo;
     QWidget *centralWidget;
     QTextEdit *textEditSQL;
     QTreeWidget *treeWidgetDB;
     QLabel *label;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButtonCMD;
     QPushButton *pushButtonCommitQ;
@@ -67,6 +68,8 @@ public:
         action_E->setObjectName(QString::fromUtf8("action_E"));
         action_Q = new QAction(MainWindow);
         action_Q->setObjectName(QString::fromUtf8("action_Q"));
+        action_EditTableInfo = new QAction(MainWindow);
+        action_EditTableInfo->setObjectName(QString::fromUtf8("action_EditTableInfo"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         textEditSQL = new QTextEdit(centralWidget);
@@ -78,20 +81,20 @@ public:
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(500, 10, 231, 41));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(770, 220, 241, 51));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(770, 220, 241, 51));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButtonCMD = new QPushButton(widget);
+        pushButtonCMD = new QPushButton(layoutWidget);
         pushButtonCMD->setObjectName(QString::fromUtf8("pushButtonCMD"));
 
         horizontalLayout->addWidget(pushButtonCMD);
 
-        pushButtonCommitQ = new QPushButton(widget);
+        pushButtonCommitQ = new QPushButton(layoutWidget);
         pushButtonCommitQ->setObjectName(QString::fromUtf8("pushButtonCommitQ"));
 
         horizontalLayout->addWidget(pushButtonCommitQ);
@@ -120,6 +123,7 @@ public:
         menu_R->addAction(action_C);
         menu_R->addAction(action_CreateTable);
         menu_R->addAction(action_E);
+        menu_R->addAction(action_EditTableInfo);
 
         retranslateUi(MainWindow);
 
@@ -133,8 +137,9 @@ public:
         action_R->setText(QApplication::translate("MainWindow", "\346\263\250\345\206\214(&R)", nullptr));
         action_C->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272/\351\200\211\346\213\251\346\225\260\346\215\256\345\272\223(&C)", nullptr));
         action_CreateTable->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272\350\241\250(&T)", nullptr));
-        action_E->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250(&E)", nullptr));
+        action_E->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250\347\273\223\346\236\204(&E)", nullptr));
         action_Q->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\346\235\203\351\231\220(&Q)", nullptr));
+        action_EditTableInfo->setText(QApplication::translate("MainWindow", "\347\274\226\350\276\221\350\241\250\346\225\260\346\215\256(&P)", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = treeWidgetDB->headerItem();
         ___qtreewidgetitem->setText(0, QApplication::translate("MainWindow", "\346\225\260\346\215\256\345\272\223\346\200\273\350\247\210", nullptr));
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">SQL\350\276\223\345\205\245\346\241\206</span></p></body></html>", nullptr));

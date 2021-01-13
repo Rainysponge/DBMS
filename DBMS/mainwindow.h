@@ -19,6 +19,7 @@
 #include "createtable.h"
 #include "changetablewindow.h"
 #include "changelimitw.h"
+#include "table.h"
 
 namespace Ui {
 class MainWindow;
@@ -44,6 +45,7 @@ private slots:
     void createTableActionsSlot();
     void changeTableActionsSlot();
     void changeLimitActionsSlot();
+    void changeTableInfoSlot();
 
     void on_pushButtonCommitQ_clicked();
 
@@ -54,6 +56,11 @@ private:
     QTreeWidgetItem *item = nullptr;  //根节点(根节点下可以有多个子结点)
     QTreeWidgetItem *itemD = nullptr; //子节点(子点下可以有多个孙子结点)
     QTreeWidgetItem *itemW = nullptr; //子节点
+
+    QVector<QString> x;  // 存储csv文件第1列数据
+    QVector<QVector<QString>> qv2;
+    int row;
+    QStringList list1;
 };
 
 #endif // MAINWINDOW_H

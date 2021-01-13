@@ -18,6 +18,7 @@ class createTable : public QDialog
 public:
     explicit createTable(QWidget *parent = nullptr);
     ~createTable();
+    bool limitJudge(int limitIndex);
 
 public slots:
     void print_Type();

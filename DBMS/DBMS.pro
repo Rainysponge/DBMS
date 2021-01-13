@@ -32,7 +32,8 @@ SOURCES += \
     createdatabasewindow.cpp \
     createtable.cpp \
     changetablewindow.cpp \
-    changelimitw.cpp
+    changelimitw.cpp \
+    table.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,7 +42,8 @@ HEADERS += \
     createdatabasewindow.h \
     createtable.h \
     changetablewindow.h \
-    changelimitw.h
+    changelimitw.h \
+    table.h
 
 FORMS += \
         mainwindow.ui \
@@ -50,7 +52,8 @@ FORMS += \
     createdatabasewindow.ui \
     createtable.ui \
     changetablewindow.ui \
-    changelimitw.ui
+    changelimitw.ui \
+    table.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

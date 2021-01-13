@@ -52,7 +52,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;SQL输入框&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>770</x>
@@ -103,6 +103,7 @@
     <addaction name="action_C"/>
     <addaction name="action_CreateTable"/>
     <addaction name="action_E"/>
+    <addaction name="action_EditTableInfo"/>
    </widget>
    <addaction name="menu_U"/>
    <addaction name="menu_R"/>
@@ -138,12 +139,17 @@
   </action>
   <action name="action_E">
    <property name="text">
-    <string>编辑表(&amp;E)</string>
+    <string>编辑表结构(&amp;E)</string>
    </property>
   </action>
   <action name="action_Q">
    <property name="text">
     <string>修改权限(&amp;Q)</string>
+   </property>
+  </action>
+  <action name="action_EditTableInfo">
+   <property name="text">
+    <string>编辑表数据(&amp;P)</string>
    </property>
   </action>
  </widget>

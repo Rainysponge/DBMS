@@ -17,6 +17,7 @@ class createDatabaseWindow : public QDialog
 public:
     explicit createDatabaseWindow(QWidget *parent = nullptr);
     ~createDatabaseWindow();
+    bool limitJudge(int limitIndex);
 
 private slots:
     void on_pushButtonCreateDB_clicked();

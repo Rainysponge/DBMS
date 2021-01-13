@@ -17,6 +17,7 @@ class changeTableWindow : public QDialog
 public:
     explicit changeTableWindow(QWidget *parent = nullptr);
     ~changeTableWindow();
+    bool limitJudge(int limitIndex);
 
 private slots:
     void on_pushButtonSave_clicked();

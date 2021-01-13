@@ -25,7 +25,11 @@ void changeLimitW::on_pushButtonShow_clicked()
 
 
     QFile csvFile(userpath);
-    csvFile.open(QIODevice::ReadWrite|QIODevice::Text);
+    if(!csvFile.open(QIODevice::ReadWrite|QIODevice::Text))
+    {
+        QMessageBox::warning(this, "ERROR", "该用户不存在");
+        return;
+    }
     QTextStream * out = new QTextStream(&csvFile);
     QStringList tempOption = out->readAll().split("\n");//每行以\n区分
     qDebug() << out->readAll();
@@ -82,7 +86,11 @@ void changeLimitW::on_pushButtonSummit_clicked()
 
 
     QFile csvFile(userpath);
-    csvFile.open(QIODevice::ReadWrite|QIODevice::Text);
+    if(!csvFile.open(QIODevice::ReadWrite|QIODevice::Text))
+    {
+        QMessageBox::warning(this, "ERROR", "用户不存在！");
+        return;
+    }
     QTextStream * out = new QTextStream(&csvFile);
     QStringList tempOption = out->readAll().split("\n");//每行以\n区分
     qDebug() << out->readAll();
@@ -102,15 +110,15 @@ void changeLimitW::on_pushButtonSummit_clicked()
              output += "删除:" + limitUser[4] + "更新:" + limitUser[5] + "筛选:" + limitUser[6] + "查看:" + limitUser[7];
 
              //输出到文件的QString
-             outputToFile += username + "," + tempbar[1]+ ",";
-             outputToFile += "," + limitUser[0] + "," + limitUser[1] + "," + limitUser[2];
-             outputToFile += "," + limitUser[3] + "," + limitUser[4] + "," + limitUser[5] + "," + limitUser[6] + "," + limitUser[7] + "\n";
+             outputToFile += username + "," + tempbar[1]+ "," + limitUser[0] + "," + limitUser[1] + "," + limitUser[2] +"," + limitUser[3] + "," + limitUser[4] + "," + limitUser[5] + "," + limitUser[6] + "," + limitUser[7] + "\n";
+
+
 
          }else{
 
              // ToFile
 
-             outputToFile += tempbar[0] + "," + tempbar[1]+ ",";
+             outputToFile += tempbar[0] + "," + tempbar[1];
              outputToFile += "," + tempbar[2] + "," + tempbar[3] + "," + tempbar[4];
              outputToFile += "," + tempbar[5] + "," + tempbar[6] + "," + tempbar[7] + "," + tempbar[8] + "," + tempbar[9] + "\n";
          }

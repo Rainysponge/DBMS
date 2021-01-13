@@ -15,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
             &MainWindow::createTableActionsSlot);
     connect(ui->action_E, &QAction::triggered, this, &MainWindow::changeTableActionsSlot);
     connect(ui->action_Q, &QAction::triggered, this, &MainWindow::changeLimitActionsSlot);
+    connect(ui->action_EditTableInfo, &QAction::triggered,
+            this, &MainWindow::changeTableInfoSlot);
 }
 
 MainWindow::~MainWindow()
@@ -554,3 +556,10 @@ void MainWindow::on_pushButtonCMD_clicked()
 {
     system("C:\\Users\\37536\\Desktop\\database_cp\\main.exe");
 }
+
+void MainWindow::changeTableInfoSlot()
+{
+    table *w = new table();
+    w->show();
+}
+
