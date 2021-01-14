@@ -40,7 +40,7 @@ public:
         createDatabaseWindow->resize(640, 480);
         label = new QLabel(createDatabaseWindow);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(220, 30, 191, 61));
+        label->setGeometry(QRect(220, 30, 221, 61));
         layoutWidget = new QWidget(createDatabaseWindow);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(370, 300, 261, 101));

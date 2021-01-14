@@ -20,6 +20,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QTreeWidget>
@@ -45,6 +46,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButtonCMD;
     QPushButton *pushButtonCommitQ;
+    QTableWidget *tableWidget;
     QMenuBar *menuBar;
     QMenu *menu_U;
     QMenu *menu_R;
@@ -77,7 +79,7 @@ public:
         textEditSQL->setGeometry(QRect(210, 60, 801, 151));
         treeWidgetDB = new QTreeWidget(centralWidget);
         treeWidgetDB->setObjectName(QString::fromUtf8("treeWidgetDB"));
-        treeWidgetDB->setGeometry(QRect(10, 10, 181, 601));
+        treeWidgetDB->setGeometry(QRect(10, 10, 181, 631));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(500, 10, 231, 41));
@@ -99,6 +101,9 @@ public:
 
         horizontalLayout->addWidget(pushButtonCommitQ);
 
+        tableWidget = new QTableWidget(centralWidget);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setGeometry(QRect(210, 290, 801, 351));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));

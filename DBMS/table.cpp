@@ -355,7 +355,11 @@ void table::on_pushButton_S_clicked()
                 {
                     continue;
                 }
-                conTents += item->text() + ",";
+                if(i < header->count()-1)
+                    conTents += item->text() + ",";
+                else {
+                    conTents += item->text();
+                }
             }
             conTents += "\n";
         }
@@ -373,7 +377,10 @@ void table::on_pushButton_S_clicked()
 
                 QString str = item->text();
                 str.replace(","," ");
-                conTents += str + ",";
+                if(j < ui->tableWidget->columnCount()-1)
+                    conTents += str + ",";
+                else
+                    conTents += str;
             }
             conTents += "\n";
         }

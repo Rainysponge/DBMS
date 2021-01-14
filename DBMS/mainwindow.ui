@@ -30,7 +30,7 @@
       <x>10</x>
       <y>10</y>
       <width>181</width>
-      <height>601</height>
+      <height>631</height>
      </rect>
     </property>
     <column>
@@ -77,6 +77,16 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>290</y>
+      <width>801</width>
+      <height>351</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

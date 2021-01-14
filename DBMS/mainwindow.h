@@ -36,6 +36,12 @@ public:
     void deleteSQL(QString username, QString sql);
     void useSQL(QString username, QString sql);
     void createSQL(QString username, QString sql);
+    void selectData(QString sql);
+    void insertData(QString sql);
+    void updateData(QString sql);
+    void grantLimit(QString sql);
+    void revokeLimit(QString sql);
+    bool check_insertData(QString table_name, QString database_used,QVector<QString> all_data_name,QVector<QString> all_insert_data);
 
 
 private slots:
@@ -57,10 +63,8 @@ private:
     QTreeWidgetItem *itemD = nullptr; //子节点(子点下可以有多个孙子结点)
     QTreeWidgetItem *itemW = nullptr; //子节点
 
-    QVector<QString> x;  // 存储csv文件第1列数据
-    QVector<QVector<QString>> qv2;
-    int row;
-    QStringList list1;
+
+    bool select_flag = false;
 };
 
 #endif // MAINWINDOW_H
